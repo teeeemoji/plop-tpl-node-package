@@ -1,0 +1,54 @@
+{
+  "name": "{{dashCase pkgName }}",
+  "version": "0.0.1",
+  "description": "{{dashCase pkgDescription }}",
+  "main": "index.js",
+  "scripts": {
+    "cs": "./node_modules/.bin/eslint --fix .",
+    "precommit": "lint-staged",
+    "commit": "./node_modules/.bin/git-cz",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "version": "npm run changelog",
+    "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "teeeemoji",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
+    "babel-eslint": "^10.0.1",
+    "commitizen": "^2.10.1",
+    "conventional-changelog-cli": "^2.0.5",
+    "eslint": "^5.6.1",
+    "eslint-config-fbjs": "^2.1.0",
+    "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-relay": "^0.0.24",
+    "husky": "^1.0.1",
+    "lint-staged": "^7.3.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/eslint --fix",
+      "git add "
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
