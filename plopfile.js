@@ -5,9 +5,9 @@ const setActionTypes = require('./lib/set-action-types')
 const setGenerators = require('./lib/set-generators')
 
 module.exports = function (plop) {
-    setHelpers(plop)
-    setPartials(plop)
-    setPrompters(plop)
-    setActionTypes(plop)
-    setGenerators(plop)
+  setHelpers(plop)
+  setPartials(plop)
+  setPrompters(plop)
+  setActionTypes(plop)
+  setGenerators(plop)
 }
