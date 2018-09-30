@@ -5,19 +5,15 @@ Simple plop templates of node package.
 ## Installation
 
 ```console
-$ npm install -g plop
-$ npm install @dimitrinicolas/plop-templates
+$ npm install -g plop plop-tpl-node-package
 ```
 ## Usage
 
-Create a plopfile.js file in your projects root directory.
+Use `cyou-plop-node` command will launch plop CLI with this template.
 
-```js
-// plopfile.js
-module.exports = require('plop-tpl-node-package');
+```console
+cyou-plop-node
 ```
-
-Then launch plop CLI using the `plop` command.
 
 ## Templates
 

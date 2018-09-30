@@ -1,0 +1,16 @@
+#! /bin/bash
+CUR_DIR="$(pwd)"
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+BIN_DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null && pwd )"
+
+cd $BIN_DIR
+plop
+mv -i $BIN_DIR/../build/* $CUR_DIR
+rm -rfv $BIN_DIR/../build/
+cd $CUR_DIR
