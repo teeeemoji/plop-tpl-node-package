@@ -10,7 +10,7 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "version": "npm run changelog",
     "changelog": "./node_modules/.bin/conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/jest"
   },
   "repository": {
     "type": "git"
@@ -33,6 +33,7 @@
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-relay": "^0.0.24",
     "husky": "^1.0.1",
+    "jest": "^23.6.0",
     "lint-staged": "^7.3.0"
   },
   "lint-staged": {
@@ -50,5 +51,10 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "jest": {
+    "testMatch": [
+      "**/__test{s,}__/*.(spec|test).js"
+    ]
   }
 }
