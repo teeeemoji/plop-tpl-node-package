@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "10"
+dist: trusty
+sudo: false
+
+cache:
+  bundle: true
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+before_script:
+  - npm install codecov
+script:
+  - npm test -- --coverage
+after_script:
+  - codecov --token=$CODECOV_TOKEN
